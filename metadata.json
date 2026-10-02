@@ -1,0 +1,7 @@
+{
+  "name": "Care Path",
+  "description": "AI-powered healthcare access, emergency assistance, digital triage, hospital discovery, bed availability, ambulance coordination, digital health records, teleconsultation, and longitudinal care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

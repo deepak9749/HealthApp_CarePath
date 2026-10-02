@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Care Path</string>
+    <string name="tagline">From Symptoms to Care — One Smart Health Platform</string>
+    <string name="emergency_action">EMERGENCY</string>
+    <string name="call_emergency">Call 108 Emergency</string>
+    <string name="request_ambulance">Request Ambulance</string>
+    <string name="ai_assistant_title">Smart Health AI</string>
+    <string name="ask_smart_health_ai">Ask Smart Health AI</string>
+</resources>
+

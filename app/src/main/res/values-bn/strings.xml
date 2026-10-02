@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">কেয়ার পাথ</string>
+    <string name="tagline">লক্ষণ থেকে চিকিৎসা — একটি স্মার্ট স্বাস্থ্য প্ল্যাটফর্ম</string>
+    <string name="emergency_action">জরুরি অবস্থা</string>
+    <string name="call_emergency">১০৮ জরুরি কল</string>
+    <string name="request_ambulance">অ্যাম্বুলেন্সের অনুরোধ করুন</string>
+    <string name="ai_assistant_title">স্মার্ট হেলথ এআই</string>
+    <string name="ask_smart_health_ai">স্মার্ট হেলথ এআই-কে জিজ্ঞাসা করুন</string>
+</resources>

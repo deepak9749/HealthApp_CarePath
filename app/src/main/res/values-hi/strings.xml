@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">केयर पाथ</string>
+    <string name="tagline">लक्षणों से उपचार तक — एक स्मार्ट स्वास्थ्य प्लेटफॉर्म</string>
+    <string name="emergency_action">आपातकाल</string>
+    <string name="call_emergency">108 आपातकालीन कॉल</string>
+    <string name="request_ambulance">एम्बुलेंस का अनुरोध करें</string>
+    <string name="ai_assistant_title">स्मार्ट हेल्थ एआई</string>
+    <string name="ask_smart_health_ai">स्मार्ट हेल्थ एआई से पूछें</string>
+</resources>
