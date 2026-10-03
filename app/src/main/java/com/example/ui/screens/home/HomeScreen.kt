@@ -254,12 +254,20 @@ fun HomeScreen(
                                     color = EmergencyRed
                                 )
                             }
-                            Text(
-                                text = nearestEmergencyHosp.distanceFormatted,
-                                fontSize = 13.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = Color(0xFF006874)
-                            )
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = Color(0xFFE0F2F1),
+                                border = BorderStroke(1.dp, Color(0xFF80CBC4))
+                            ) {
+                                Text(
+                                    text = nearestEmergencyHosp.distanceFormatted,
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color(0xFF006874),
+                                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
+                                )
+                            }
+
                         }
 
                         Spacer(modifier = Modifier.height(8.dp))
@@ -420,57 +428,7 @@ fun HomeScreen(
             }
         }
 
-        // 5. Trust / Benefit Information Strip (Matches Reference)
-        item {
-            Card(
-                shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.White),
-                border = BorderStroke(1.dp, Color(0xFFE2E8F0)),
-                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 12.dp)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 12.dp, horizontal = 6.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    TrustItem(
-                        icon = Icons.Default.VerifiedUser,
-                        iconTint = Color(0xFF00897B),
-                        title = "Secure",
-                        subtitle = "Your health,\nour priority",
-                        modifier = Modifier.weight(1f)
-                    )
-                    VerticalDivider(modifier = Modifier.height(36.dp), color = Color(0xFFE2E8F0))
-                    TrustItem(
-                        icon = Icons.Default.Bolt,
-                        iconTint = Color(0xFFF59E0B),
-                        title = "Fast & Reliable",
-                        subtitle = "Quick help when\nyou need it",
-                        modifier = Modifier.weight(1f)
-                    )
-                    VerticalDivider(modifier = Modifier.height(36.dp), color = Color(0xFFE2E8F0))
-                    TrustItem(
-                        icon = Icons.Default.Groups,
-                        iconTint = Color(0xFF0288D1),
-                        title = "Trusted Network",
-                        subtitle = "Verified hospitals\n& professionals",
-                        modifier = Modifier.weight(1f)
-                    )
-                    VerticalDivider(modifier = Modifier.height(36.dp), color = Color(0xFFE2E8F0))
-                    TrustItem(
-                        icon = Icons.Default.Favorite,
-                        iconTint = Color(0xFFE11D48),
-                        title = "With You",
-                        subtitle = "Compassionate\ncare, always",
-                        modifier = Modifier.weight(1f)
-                    )
-                }
-            }
-        }
+        
 
         // 6. Highlighted Section Header: "Clinical Services" (No View All)
         item {
@@ -488,51 +446,69 @@ fun HomeScreen(
 
         // 7. Clinical Service Cards Row (Matches Reference)
         item {
-            Row(
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .horizontalScroll(rememberScrollState())
                     .padding(horizontal = 16.dp, vertical = 6.dp),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                ReferenceServiceCard(
-                    icon = Icons.Default.Medication,
-                    iconBg = Color(0xFFE0F2F1),
-                    iconTint = Color(0xFF00897B),
-                    title = "Find Medicine",
-                    onClick = { onNavigateTo(Screen.Medicines.route) }
-                )
-                ReferenceServiceCard(
-                    icon = Icons.Default.FolderShared,
-                    iconBg = Color(0xFFE0F2FE),
-                    iconTint = Color(0xFF0288D1),
-                    title = "Health Records",
-                    onClick = { onNavigateTo(Screen.Reports.route) }
-                )
-                ReferenceServiceCard(
-                    icon = Icons.Default.Biotech,
-                    iconBg = Color(0xFFF3E5F5),
-                    iconTint = Color(0xFF8E24AA),
-                    title = "Lab Tests",
-                    onClick = { onNavigateTo(Screen.Diagnostics.route) }
-                )
-                ReferenceServiceCard(
-                    icon = Icons.Default.Person,
-                    iconBg = Color(0xFFE0F2FE),
-                    iconTint = Color(0xFF0369A1),
-                    title = "Consult Doctors",
-                    onClick = { onNavigateTo(Screen.Doctors.route) }
-                )
-                ReferenceServiceCard(
-                    icon = Icons.Default.VolunteerActivism,
-                    iconBg = Color(0xFFFFEBEE),
-                    iconTint = Color(0xFFE11D48),
-                    title = "Maternal Programs",
-                    onClick = { onNavigateTo(Screen.MaternalHealth.route) }
-                )
+                // First row: Find Medicine, Health Records, Lab Tests
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    ReferenceServiceCard(
+                        icon = Icons.Default.Medication,
+                        iconBg = Color(0xFFE0F2F1),
+                        iconTint = Color(0xFF00897B),
+                        title = "Find Medicine",
+                        onClick = { onNavigateTo(Screen.Medicines.route) },
+                        modifier = Modifier.weight(1f)
+                    )
+                    ReferenceServiceCard(
+                        icon = Icons.Default.FolderShared,
+                        iconBg = Color(0xFFE0F2FE),
+                        iconTint = Color(0xFF0288D1),
+                        title = "Health Records",
+                        onClick = { onNavigateTo(Screen.Reports.route) },
+                        modifier = Modifier.weight(1f)
+                    )
+                    ReferenceServiceCard(
+                        icon = Icons.Default.Biotech,
+                        iconBg = Color(0xFFF3E5F5),
+                        iconTint = Color(0xFF8E24AA),
+                        title = "Lab Tests",
+                        onClick = { onNavigateTo(Screen.Diagnostics.route) },
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+
+                // Second row: Consult Doctors, Maternal Programs
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    ReferenceServiceCard(
+                        icon = Icons.Default.Person,
+                        iconBg = Color(0xFFE0F2FE),
+                        iconTint = Color(0xFF0369A1),
+                        title = "Consult Doctors",
+                        onClick = { onNavigateTo(Screen.Doctors.route) },
+                        modifier = Modifier.weight(1f)
+                    )
+                    ReferenceServiceCard(
+                        icon = Icons.Default.VolunteerActivism,
+                        iconBg = Color(0xFFFFEBEE),
+                        iconTint = Color(0xFFE11D48),
+                        title = "Maternal Programs",
+                        onClick = { onNavigateTo(Screen.MaternalHealth.route) },
+                        modifier = Modifier.weight(1f)
+                    )
+                    // Empty third slot keeps the second row aligned with the first row.
+                    Spacer(modifier = Modifier.weight(1f))
+                }
             }
         }
-
         // 8. Nearby Verified Hospitals Section Header (Matching Teal Banner with functional View All)
         item {
             Box(

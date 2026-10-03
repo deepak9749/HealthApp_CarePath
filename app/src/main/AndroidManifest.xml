@@ -14,6 +14,13 @@
         <intent>
             <action android:name="android.speech.RecognitionService" />
         </intent>
+        <package android:name="com.grofers.customerapp" />
+        <package android:name="com.rapido.passenger" />
+        <package android:name="com.ubercab" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="market" />
+        </intent>
     </queries>
 
     <application
